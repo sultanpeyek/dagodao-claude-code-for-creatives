@@ -1,0 +1,237 @@
+/* Layout Overrides for Anthropic Theme */
+
+/* Cover/Intro layout - gradient background */
+.slidev-layout.cover,
+.slidev-layout.intro {
+  background: linear-gradient(
+    135deg,
+    var(--anthropic-dark) 0%,
+    var(--anthropic-surface-1) 50%,
+    var(--anthropic-dark) 100%
+  ) !important;
+}
+
+.slidev-layout.cover h1,
+.slidev-layout.intro h1 {
+  color: var(--anthropic-light) !important;
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.slidev-layout.cover p,
+.slidev-layout.intro p {
+  color: var(--anthropic-orange) !important;
+  font-size: 1.5rem;
+}
+
+/* Statement/fact layout - centered emphasis */
+.slidev-layout.statement,
+.slidev-layout.fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--anthropic-dark) !important;
+}
+
+.slidev-layout.statement h1,
+.slidev-layout.fact h1 {
+  color: var(--anthropic-light) !important;
+  font-size: 2.5rem;
+}
+
+.slidev-layout.statement p,
+.slidev-layout.fact p {
+  color: var(--anthropic-mid-gray);
+  font-size: 1.25rem;
+}
+
+/* Section layout - orange heading accent */
+.slidev-layout.section {
+  background: var(--anthropic-dark) !important;
+}
+
+.slidev-layout.section h1 {
+  color: var(--anthropic-orange) !important;
+  font-size: 3rem;
+  border-bottom: 2px solid var(--anthropic-orange);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Quote layout - Lora italic styling */
+.slidev-layout.quote {
+  background: var(--anthropic-dark) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slidev-layout.quote blockquote,
+.slidev-layout.quote p {
+  font-family: 'Lora', ui-serif, Georgia, serif !important;
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--anthropic-light);
+  border-left: 4px solid var(--anthropic-orange);
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.slidev-layout.quote cite,
+.slidev-layout.quote .author {
+  color: var(--anthropic-mid-gray);
+  font-size: 1rem;
+  margin-top: 1rem;
+  display: block;
+}
+
+/* Two-cols layout - subtle divider */
+.slidev-layout.two-cols {
+  background: var(--anthropic-dark) !important;
+}
+
+.slidev-layout.two-cols .col-left {
+  border-right: 1px solid var(--anthropic-border);
+  padding-right: 2rem;
+}
+
+.slidev-layout.two-cols .col-right {
+  padding-left: 2rem;
+}
+
+/* Default layout - consistent styling */
+.slidev-layout.default,
+.slidev-layout {
+  background: var(--anthropic-dark) !important;
+}
+
+/* List styling - orange markers */
+.slidev-layout ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.slidev-layout ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.slidev-layout ul li::before {
+  content: '';
+  position: absolute;
+  left: -1.25rem;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--anthropic-orange);
+  border-radius: 50%;
+}
+
+/* Nested list markers - different colors */
+.slidev-layout ul ul li::before {
+  background-color: var(--anthropic-blue);
+  width: 5px;
+  height: 5px;
+}
+
+.slidev-layout ul ul ul li::before {
+  background-color: var(--anthropic-green);
+  width: 4px;
+  height: 4px;
+}
+
+/* Ordered list styling */
+.slidev-layout ol {
+  list-style: none;
+  padding-left: 2rem;
+  counter-reset: item;
+}
+
+.slidev-layout ol li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  counter-increment: item;
+}
+
+.slidev-layout ol li::before {
+  content: counter(item) '.';
+  position: absolute;
+  left: -2rem;
+  color: var(--anthropic-orange);
+  font-weight: 600;
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Image layout */
+.slidev-layout.image-right,
+.slidev-layout.image-left,
+.slidev-layout.image {
+  background: var(--anthropic-dark) !important;
+}
+
+/* Center layout */
+.slidev-layout.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--anthropic-dark) !important;
+}
+
+/* End/Thank you layout */
+.slidev-layout.end {
+  background: linear-gradient(
+    135deg,
+    var(--anthropic-dark) 0%,
+    var(--anthropic-surface-2) 100%
+  ) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-layout.end h1 {
+  color: var(--anthropic-orange) !important;
+  font-size: 3rem;
+}
+
+/* Full layout */
+.slidev-layout.full {
+  padding: 0;
+  background: var(--anthropic-dark) !important;
+}
+
+/* iframe layout */
+.slidev-layout.iframe {
+  background: var(--anthropic-dark) !important;
+}
+
+/* Table styling */
+.slidev-layout table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.slidev-layout table th {
+  background: var(--anthropic-surface-2);
+  color: var(--anthropic-orange);
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--anthropic-orange);
+}
+
+.slidev-layout table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--anthropic-border);
+}
+
+.slidev-layout table tr:hover td {
+  background: var(--anthropic-surface-1);
+}

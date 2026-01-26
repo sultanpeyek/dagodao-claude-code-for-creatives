@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f0f23"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#d97757;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#d97757;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#glow)"/>
+
+  <!-- Logo mark -->
+  <rect x="80" y="80" width="64" height="64" rx="12" fill="#d97757"/>
+  <text x="112" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle">C</text>
+
+  <!-- Title -->
+  <text x="80" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white">Claude Code</text>
+  <text x="80" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#d97757">for Creatives</text>
+
+  <!-- Tagline -->
+  <text x="80" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="rgba(255,255,255,0.7)">Turn "I Wish I Could" into "Let Me Just Ask"</text>
+
+  <!-- Footer -->
+  <text x="80" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.5)">DagoDAO Peer Sharing Workshop</text>
+</svg>

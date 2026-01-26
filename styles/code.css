@@ -1,0 +1,235 @@
+/* Code Block Styling for Anthropic Theme */
+
+/* Code block container */
+.slidev-layout pre,
+pre[class*='language-'],
+.shiki,
+.slidev-code {
+  background: var(--anthropic-surface-3) !important;
+  border: 1px solid var(--anthropic-border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Code text */
+.slidev-layout pre code,
+pre[class*='language-'] code,
+.shiki code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  color: var(--anthropic-light);
+  background: transparent !important;
+}
+
+/* Inline code */
+.slidev-layout code:not(pre code),
+p code,
+li code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+  color: var(--anthropic-orange) !important;
+  background: var(--anthropic-surface-2) !important;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid var(--anthropic-border);
+}
+
+/* Line highlighting with orange tint */
+.shiki .line.highlighted,
+.slidev-code .line.highlighted,
+.line-highlight,
+.highlight-line {
+  background: rgba(217, 119, 87, 0.15) !important;
+  border-left: 3px solid var(--anthropic-orange);
+  margin-left: -1rem;
+  padding-left: calc(1rem - 3px);
+  margin-right: -1rem;
+  padding-right: 1rem;
+}
+
+/* Line numbers */
+.slidev-code .line-numbers,
+.shiki .line-numbers,
+pre .line-numbers-rows {
+  color: var(--anthropic-mid-gray);
+  border-right: 1px solid var(--anthropic-border);
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
+
+/* Diff highlighting */
+.shiki .diff.add,
+.line.diff.add {
+  background: rgba(120, 140, 93, 0.2) !important;
+  border-left: 3px solid var(--anthropic-green);
+}
+
+.shiki .diff.remove,
+.line.diff.remove {
+  background: rgba(217, 119, 87, 0.2) !important;
+  border-left: 3px solid var(--anthropic-orange);
+}
+
+/* Focus mode for code blocks */
+.shiki.has-focused .line:not(.focused) {
+  opacity: 0.4;
+  filter: blur(1px);
+  transition: all 0.3s ease;
+}
+
+.shiki.has-focused:hover .line:not(.focused) {
+  opacity: 0.7;
+  filter: blur(0);
+}
+
+/* Syntax highlighting - Anthropic palette mapping */
+
+/* Comments - mid gray */
+.shiki .token.comment,
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--anthropic-mid-gray) !important;
+  font-style: italic;
+}
+
+/* Strings - green */
+.shiki .token.string,
+.token.string,
+.token.attr-value {
+  color: var(--anthropic-green) !important;
+}
+
+/* Numbers, booleans - blue */
+.shiki .token.number,
+.shiki .token.boolean,
+.token.number,
+.token.boolean,
+.token.constant {
+  color: var(--anthropic-blue) !important;
+}
+
+/* Keywords, operators - orange */
+.shiki .token.keyword,
+.shiki .token.operator,
+.token.keyword,
+.token.operator,
+.token.important {
+  color: var(--anthropic-orange) !important;
+}
+
+/* Functions - light */
+.shiki .token.function,
+.token.function {
+  color: var(--anthropic-light) !important;
+}
+
+/* Variables, parameters - light gray */
+.shiki .token.variable,
+.shiki .token.parameter,
+.token.variable,
+.token.parameter {
+  color: var(--anthropic-light-gray) !important;
+}
+
+/* Tags (HTML/JSX) - orange */
+.shiki .token.tag,
+.token.tag {
+  color: var(--anthropic-orange) !important;
+}
+
+/* Attributes - blue */
+.shiki .token.attr-name,
+.token.attr-name {
+  color: var(--anthropic-blue) !important;
+}
+
+/* Classes, types - light */
+.shiki .token.class-name,
+.shiki .token.builtin,
+.token.class-name,
+.token.builtin {
+  color: var(--anthropic-light) !important;
+}
+
+/* Punctuation - mid gray */
+.shiki .token.punctuation,
+.token.punctuation {
+  color: var(--anthropic-mid-gray) !important;
+}
+
+/* Properties - light gray */
+.shiki .token.property,
+.token.property {
+  color: var(--anthropic-light-gray) !important;
+}
+
+/* Regex - green */
+.shiki .token.regex,
+.token.regex {
+  color: var(--anthropic-green) !important;
+}
+
+/* Code block title/filename */
+.slidev-code-file-name,
+.code-block-title {
+  background: var(--anthropic-surface-2);
+  color: var(--anthropic-mid-gray);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--anthropic-border);
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.slidev-code-file-name + pre,
+.code-block-title + pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Monaco editor styling (if used) */
+.monaco-editor,
+.monaco-editor-background {
+  background: var(--anthropic-surface-3) !important;
+}
+
+.monaco-editor .margin {
+  background: var(--anthropic-surface-2) !important;
+}
+
+/* Terminal/console output styling */
+.slidev-layout pre.terminal,
+.slidev-layout pre.console,
+.slidev-layout pre.shell {
+  background: #0d0d0c !important;
+  border: 1px solid var(--anthropic-border);
+}
+
+.slidev-layout pre.terminal code,
+.slidev-layout pre.console code,
+.slidev-layout pre.shell code {
+  color: var(--anthropic-green);
+}
+
+/* Code copy button */
+.slidev-code-copy,
+.code-copy-btn {
+  background: var(--anthropic-surface-2) !important;
+  color: var(--anthropic-mid-gray) !important;
+  border: 1px solid var(--anthropic-border);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.slidev-code-copy:hover,
+.code-copy-btn:hover {
+  background: var(--anthropic-surface-3) !important;
+  color: var(--anthropic-orange) !important;
+  border-color: var(--anthropic-orange);
+}

@@ -1,0 +1,140 @@
+# Metadata Configuration
+# Run `/apply-metadata` to sync these values to all target files
+
+metadata:
+  # Core identity
+  title: 'Claude Code for Creatives'
+  short_name: 'CC4Creatives'
+  tagline: 'Turn "I Wish I Could" into "Let Me Just Ask"'
+  description:
+    'Turn "I Wish I Could" into "Let Me Just Ask" — A workshop for artists,
+    designers, and makers.'
+
+  # Version
+  version: '1.0.0'
+  license: 'MIT'
+
+  # URLs
+  urls:
+    base: 'https://sultanpeyek.github.io/dagodao-claude-code-for-creatives/'
+    base_path: '/dagodao-claude-code-for-creatives/'
+    repo: 'https://github.com/sultanpeyek/dagodao-claude-code-for-creatives'
+    demo: 'https://sultanpeyek.github.io/dagodao-claude-code-for-creatives-demo/'
+    demo_repo: 'https://github.com/sultanpeyek/dagodao-claude-code-for-creatives-demo'
+
+  # Author & organization
+  author:
+    name: 'Sultan Peyek'
+    twitter: '@sultanpeyek'
+  organization: 'DagoDAO'
+
+  # Colors
+  colors:
+    theme: '#d97757'
+    background: '#121212'
+
+  # SEO
+  seo:
+    keywords:
+      'claude code,ai,creatives,workshop,dagodao,ai workshop,creative coding'
+    locale: 'en_US'
+    lang: 'en'
+    robots: 'index, follow'
+
+  # Open Graph
+  og:
+    type: 'website'
+    site_name: 'DagoDAO'
+    image: 'og-image.png'
+    image_alt: 'Claude Code for Creatives workshop presentation'
+    image_width: 1200
+    image_height: 630
+    image_type: 'image/png'
+    twitter_card: 'summary_large_image'
+
+  # Slidev theme
+  slidev:
+    theme: 'seriph'
+    fonts:
+      sans: 'Poppins'
+      serif: 'Lora'
+      mono: 'JetBrains Mono'
+
+  # PWA
+  pwa:
+    display: 'standalone'
+    orientation: 'landscape'
+    categories:
+      - education
+      - productivity
+
+# Target files to update
+# Claude will directly edit these files based on mappings
+targets:
+  - path: 'package.json'
+    type: json
+    mappings:
+      name: 'dagodao-claude-code-for-creatives' # npm package name (hardcoded)
+      version: version
+      author: author.name
+      homepage: urls.base
+      license: license
+      repository.url: urls.repo
+
+  - path: 'slides.md'
+    type: frontmatter
+    mappings:
+      title: title
+      info: description
+      author: author.name
+      theme: slidev.theme
+      themeConfig.primary: colors.theme
+      fonts.sans: slidev.fonts.sans
+      fonts.serif: slidev.fonts.serif
+      fonts.mono: slidev.fonts.mono
+      seo.title: title
+      seo.description: description
+      seo.keywords: seo.keywords
+      seo.author: author.name
+      seo.robots: seo.robots
+      seo.ogType: og.type
+      seo.ogSiteName: og.site_name
+      seo.ogTitle: title
+      seo.ogDescription: description
+      seo.ogUrl: urls.base
+      seo.ogImage: og.image
+      seo.ogImageAlt: og.image_alt
+      seo.ogLocale: seo.locale
+      seo.twitterCard: og.twitter_card
+      seo.twitterSite: author.twitter
+      seo.twitterCreator: author.twitter
+
+  - path: 'index.html'
+    type: html
+    mappings:
+      - selector: 'meta[property="og:image:width"]'
+        attr: content
+        value: og.image_width
+      - selector: 'meta[property="og:image:height"]'
+        attr: content
+        value: og.image_height
+      - selector: 'meta[property="og:image:type"]'
+        attr: content
+        value: og.image_type
+      - selector: 'meta[property="og:image:alt"]'
+        attr: content
+        value: og.image_alt
+
+  - path: 'public/site.webmanifest'
+    type: json
+    mappings:
+      name: title
+      short_name: short_name
+      description: description
+      theme_color: colors.theme
+      background_color: colors.background
+      display: pwa.display
+      orientation: pwa.orientation
+      categories: pwa.categories
+      start_url: urls.base_path
+      scope: urls.base_path

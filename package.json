@@ -1,0 +1,25 @@
+{
+  "name": "dagodao-claude-code-for-creatives",
+  "version": "1.0.0",
+  "description": "Turn \"I Wish I Could\" into \"Let Me Just Ask\" — A workshop for artists, designers, and makers.",
+  "author": "Sultan Peyek",
+  "license": "MIT",
+  "homepage": "https://sultanpeyek.github.io/dagodao-claude-code-for-creatives/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sultanpeyek/dagodao-claude-code-for-creatives"
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.11.3",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.26"
+  }
+}

@@ -1,0 +1,197 @@
+/* Anthropic Brand CSS Variables */
+:root {
+  /* Brand Colors */
+  --anthropic-dark: #141413;
+  --anthropic-light: #faf9f5;
+  --anthropic-mid-gray: #b0aea5;
+  --anthropic-light-gray: #e8e6dc;
+  --anthropic-orange: #d97757;
+  --anthropic-blue: #6a9bcc;
+  --anthropic-green: #788c5d;
+
+  /* Elevated surfaces */
+  --anthropic-surface-1: #1a1a18;
+  --anthropic-surface-2: #1e1e1c;
+  --anthropic-surface-3: #232321;
+  --anthropic-border: #2a2a28;
+
+  /* Force dark mode */
+  color-scheme: dark;
+
+  /* Override Slidev theme variables */
+  --slidev-theme-primary: var(--anthropic-orange);
+  --slidev-theme-background: var(--anthropic-dark);
+
+  /* Prism/Shiki overrides */
+  --prism-background: var(--anthropic-surface-3);
+}
+
+/* Force dark color scheme on all elements */
+*,
+*::before,
+*::after {
+  color-scheme: dark;
+}
+
+/* Base background and text */
+html,
+body {
+  background-color: var(--anthropic-dark) !important;
+  color: var(--anthropic-light) !important;
+}
+
+/* Slidev slide backgrounds */
+.slidev-layout {
+  background-color: var(--anthropic-dark) !important;
+  color: var(--anthropic-light);
+}
+
+/* Typography - Headings use Poppins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout h5,
+.slidev-layout h6 {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif !important;
+  color: var(--anthropic-light);
+  font-weight: 600;
+}
+
+/* Typography - Body uses Lora */
+body,
+p,
+li,
+.slidev-layout p,
+.slidev-layout li {
+  font-family: 'Lora', ui-serif, Georgia, serif !important;
+  color: var(--anthropic-light);
+}
+
+/* Muted/secondary text */
+.text-gray-400,
+.text-gray-500,
+.text-gray-600,
+.opacity-50,
+.opacity-60,
+.opacity-70 {
+  color: var(--anthropic-mid-gray) !important;
+}
+
+/* Links */
+a {
+  color: var(--anthropic-orange);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--anthropic-light);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--anthropic-orange);
+  color: var(--anthropic-dark);
+}
+
+::-moz-selection {
+  background-color: var(--anthropic-orange);
+  color: var(--anthropic-dark);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--anthropic-surface-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--anthropic-mid-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--anthropic-orange);
+}
+
+/* Hide dark mode toggle */
+.slidev-nav-toggle-dark,
+button[title*='dark'],
+button[title*='Dark'] {
+  display: none !important;
+}
+
+/* Strong/bold text */
+strong,
+b {
+  color: var(--anthropic-light);
+  font-weight: 600;
+}
+
+/* Emphasis with orange */
+em {
+  color: var(--anthropic-orange);
+  font-style: italic;
+}
+
+/* Horizontal rules */
+hr {
+  border-color: var(--anthropic-border);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--anthropic-orange);
+  padding-left: 1rem;
+  color: var(--anthropic-mid-gray);
+  font-family: 'Lora', ui-serif, Georgia, serif !important;
+  font-style: italic;
+}
+
+blockquote p {
+  color: inherit;
+}
+
+/* ===========================================
+   PRESENTER VIEW CUSTOMIZATION
+   Hides slide previews, maximizes notes area
+   =========================================== */
+
+/* Hide current slide section */
+.slidev-presenter .grid-section.main {
+  display: none !important;
+}
+
+/* Hide next slide section */
+.slidev-presenter .grid-section.next {
+  display: none !important;
+}
+
+/* Override all layouts to make notes take full space */
+.slidev-presenter .grid-container.layout1,
+.slidev-presenter .grid-container.layout2,
+.slidev-presenter .grid-container.layout3 {
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 1fr min-content !important;
+  grid-template-areas:
+    'note'
+    'bottom' !important;
+}
+
+/* Ensure notes section fills available space */
+.slidev-presenter .grid-section.note {
+  grid-area: note !important;
+  height: 100% !important;
+  overflow: auto !important;
+}

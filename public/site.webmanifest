@@ -1,0 +1,43 @@
+{
+  "id": "/dagodao-claude-code-for-creatives/",
+  "name": "Claude Code for Creatives",
+  "short_name": "CC4Creatives",
+  "description": "Turn \"I Wish I Could\" into \"Let Me Just Ask\" — A workshop for artists, designers, and makers.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/dagodao-claude-code-for-creatives/",
+  "scope": "/dagodao-claude-code-for-creatives/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#d97757",
+  "orientation": "landscape",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/dagodao-claude-code-for-creatives/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/dagodao-claude-code-for-creatives/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/dagodao-claude-code-for-creatives/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/dagodao-claude-code-for-creatives/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
